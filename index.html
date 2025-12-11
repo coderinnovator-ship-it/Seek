@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>One Sentence Today</title>
+</head>
+<body>
+    <h1>One Sentence Today</h1>
+    <p>How do you feel right now? In one sentence.</p>
+    <textarea placeholder="Type here..." rows="3"></textarea>
+    <button onclick="submitSentence()">Share</button>
+    <div id="sentences"></div>
+    <script>
+        function submitSentence() {
+            const text = document.querySelector('textarea').value;
+            if(text.trim() === '') return;
+            const div = document.createElement('div');
+            div.textContent = text;
+            document.getElementById('sentences').prepend(div);
+            document.querySelector('textarea').value = '';
+        }
+    </script>
+</body>
+</html>
